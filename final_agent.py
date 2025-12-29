@@ -7,7 +7,8 @@ model = PPO(
     env, 
     policy_kwargs=dict(net_arch=[256, 256]), 
     learning_rate=3e-4, 
-    verbose=1
+    verbose=1,
+    tensorboard_log="./ppo_logs/" 
 )
 model.learn(total_timesteps=500000)
 model.save("ppo_bipedal_final")
